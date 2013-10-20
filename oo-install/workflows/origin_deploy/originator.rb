@@ -237,7 +237,7 @@ host_order.each do |ssh_host|
     :enabledns => 'systemctl enable named.service',
     :check => 'puppet module list',
     :install => 'puppet module install openshift/openshift_origin',
-    :apply => "puppet apply --verbose ~/#{hostfile}",
+    :apply => "puppet apply --verbose #{@tmpdir}/#{hostfile}",
     :clear => "rm ~/#{hostfile}",
     :reboot => 'reboot',
   }
