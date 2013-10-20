@@ -238,7 +238,7 @@ host_order.each do |ssh_host|
     :check => 'puppet module list',
     :install => 'puppet module install openshift/openshift_origin',
     :apply => "puppet apply --verbose #{@tmpdir}/#{hostfile}",
-    :clear => "rm ~/#{hostfile}",
+    :clear => "rm #{@tmpdir}/#{hostfile}",
     :reboot => 'reboot',
   }
   # Modify the commands with sudo & ssh as necessary for this target host
